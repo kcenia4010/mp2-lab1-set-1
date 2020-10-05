@@ -9,6 +9,7 @@
 #define __SET_H__
 
 #include "tbitfield.h"
+#include <fstream>
 
 class TSet
 {
@@ -37,7 +38,13 @@ public:
   TSet operator* (const TSet &s);  // пересечение
   TSet operator~ (void);           // дополнение
 
+  TSet SquareElem(int Elem);
+  void Even();
+  void Odd();
+  void OutFile();
+  
   friend istream &operator>>(istream &istr, TSet &bf);
   friend ostream &operator<<(ostream &ostr, const TSet &bf);
+
 };
 #endif
